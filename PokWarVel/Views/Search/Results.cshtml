@@ -1,0 +1,87 @@
+﻿@model IEnumerable<PokWarVel.Models.ResultModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<section id="home-slider">
+    <div class="container">
+        <div class="row">
+            <div class="main-slider">
+                <div class="slide-text">
+                    <h1>We Are Creative Girls</h1>
+                    <p>Enjoy our PokWarVel meeting Website.</p>
+                    <a href="#" class="btn btn-common">SIGN UP</a>
+                </div>
+                <img src="~/images/home/slider/powergirl.png" class="slider-hill" alt="slider image">
+               </div>
+        </div>
+    </div>
+    <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+</section>
+<!--/#home-slider-->
+
+<h1> @Model.Count() Result(s) for "@ViewBag.searchword"</h1>
+<section id="projects">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-8">
+                <div class="row">
+                    <ul class="portfolio-filter text-center">
+                        <li><a class="btn btn-default active" href="#" data-filter="*">All</a></li>
+                        <li><a class="btn btn-default" href="#" data-filter=".branded">Marvel</a></li>
+                        <li><a class="btn btn-default" href="#" data-filter=".design">Starwars</a></li>
+                        <li><a class="btn btn-default" href="#" data-filter=".folio">Pokemon</a></li>
+                    </ul><!--/#portfolio-filter-->
+
+                    <div class="portfolio-items">
+                        @foreach (var item in Model)
+                        {
+                            Html.RenderPartial("~/Views/Shared/_Fiche.cshtml", item);
+                        }
+                    </div>
+                    <div class="portfolio-pagination">
+                        <ul class="pagination">
+                            <li ><a href="/Search/Results/?Search=@ViewBag.searchword&page=@ViewBag.Prev">left</a></li>
+                            &nbsp;
+                            <li><a href="/Search/Results/?Search=@ViewBag.searchword&page=@ViewBag.Next">right</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4 padding-top">
+                <div class="sidebar portfolio-sidebar">
+                    <div class="sidebar-item categories">
+                        <h3>Categories</h3>
+                        <ul class="nav navbar-stacked">
+                            <li><a href="#">Human<span class="pull-right">(1)</span></a></li>
+                            <li><a href="#">E.T<span class="pull-right">(8)</span></a></li>
+                            <li><a href="#">Mutan<span class="pull-right">(4)</span></a></li>
+                            <li><a href="#">Animal<span class="pull-right">(9)</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-item  recent">
+                        <h3>Recent Love Story</h3>
+                        <div class="media">
+                            <div class="pull-left">
+                                <a href="#"><img src="images/portfolio/project1.jpg" alt=""></a>
+                            </div>
+                            <div class="media-body">
+                                <h4><a href="#">DarkVador <i class="glyphicon glyphicon-heart"></i> Bulbizar</a></h4>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="pull-left">
+                                <a href="#"><img src="images/portfolio/project2.jpg" alt=""></a>
+                            </div>
+                            <div class="media-body">
+                                <h4><a href="#">Luke Skywalker <i class="glyphicon glyphicon-heart"></i> SpiderGirl</p></a></h4>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,57 @@
+﻿@model PokWarVel.Models.EvalModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>EvalModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="portfolio-items">
+            @{
+    Html.RenderPartial("~/Views/Shared/_Fiche.cshtml", Model.Hero);
+            }
+        </div>
+        @*<div class="portfolio-items">
+                @{
+                    Html.RenderPartial("~/Views/Shared/_Fiche.cshtml", Model.Eval);
+                }
+            </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Eval, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Eval, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Eval, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Commentaire, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Commentaire, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Envoyer" class="btn btn-default" />
+                <div class="alert alert-danger">@ViewBag.Erreur</div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

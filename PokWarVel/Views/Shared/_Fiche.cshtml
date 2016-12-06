@@ -1,0 +1,33 @@
+﻿@model PokWarVel.Models.ResultModel
+<div class="col-xs-6 col-sm-6 col-md-4">
+    <div class="Fiche">
+        <div class="portfolio-single head">
+            <div class="roundedImage" style="background:url(@Model.Avatar) no-repeat 0px 0px;">
+                &nbsp;
+            </div>
+            <div class="portfolio-view">
+                <ul class="nav nav-pills">
+                    <li><a href="portfolio-details.html"><i class="fa fa-link"></i></a></li>
+                    <li><a href="images/portfolio/1.jpg" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                    <li><a href="/Hero/Index/@Model.ID"><i class="fa fa-bolt"></i></a></</li>
+                </ul>
+            </div>
+        </div>
+        <div class="HeroName">
+            <h2>
+                @Model.Name
+
+                @{
+                        <span class="badge">@Model.Badge</span>
+                }
+
+            </h2>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
