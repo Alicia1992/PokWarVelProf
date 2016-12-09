@@ -1,4 +1,5 @@
-﻿using PokWarVel.Models;
+﻿using PokWarVel.infra;
+using PokWarVel.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace PokWarVel.Controllers
         // GET: Inscription
         public ActionResult Index()
         {
+                     
+
             return View();
         }
 
@@ -32,6 +35,29 @@ namespace PokWarVel.Controllers
         public ActionResult Mercii()
         {
             return View();
+        }
+
+
+        public ActionResult LogMe()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult LogMe (LoginModel lm)
+        {
+            if(lm.Verif())
+            {
+                string login = MesSessions.Inscrits.Login;
+                MesSessions.Inscrits = lm;
+
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.ErreurLogin = "Login ou mot de passe invalide";
+                return View("LogMe");
+            }
         }
     }
 }

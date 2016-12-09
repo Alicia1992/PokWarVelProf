@@ -128,6 +128,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="infra\Mapper.cs" />
+    <Compile Include="infra\MesSessions.cs" />
     <Compile Include="infra\SessionUtil.cs" />
     <Compile Include="Models\EvalModel.cs" />
     <Compile Include="Models\InscriptionModel.cs" />
@@ -252,6 +253,7 @@
     <Content Include="Views\Hero\Thanks.cshtml" />
     <Content Include="Views\Inscription\Index.cshtml" />
     <Content Include="Views\Inscription\Mercii.cshtml" />
+    <Content Include="Views\Inscription\LogMe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

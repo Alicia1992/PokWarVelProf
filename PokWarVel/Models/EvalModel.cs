@@ -17,9 +17,15 @@ namespace PokWarVel.Models
         private DateTime _date;
         private ResultModel _Hero;
         private string _commentaire;
+        private LoginModel _unLogin;
         #endregion
 
         #region Full
+        public LoginModel unLogin
+        {
+            get { return _unLogin; }
+            set { _unLogin = value; }
+        }
         public ResultModel Hero
         {
             get { return _Hero; }
