@@ -1,6 +1,7 @@
 ﻿using MarvelApi;
 using MarvelApi.Model;
 using PokWarVel.infra;
+using PokWarVel.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,6 @@ namespace PokWarVel.Controllers
 {
     public class HomeController : Controller
     {
-
         /// <summary>
         /// The default action to HomeController.
         /// </summary>
@@ -79,6 +79,13 @@ namespace PokWarVel.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Vote()
+        {
+         
+            List<VoteModel>LesVotes = VoteModel.Vote();
+            return View(LesVotes);
         }
     }
 }

@@ -120,6 +120,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\ZoneMembre\ZoneMembreAreaRegistration.cs" />
+    <Compile Include="Controllers\GmapController.cs" />
     <Compile Include="Controllers\HeroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InscriptionController.cs" />
@@ -127,6 +129,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Custom.cs" />
     <Compile Include="infra\Mapper.cs" />
     <Compile Include="infra\MesSessions.cs" />
     <Compile Include="infra\SessionUtil.cs" />
@@ -134,6 +137,7 @@
     <Compile Include="Models\InscriptionModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ResultModel.cs" />
+    <Compile Include="Models\VoteModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -221,6 +225,7 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\ZoneMembre\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -254,9 +259,14 @@
     <Content Include="Views\Inscription\Index.cshtml" />
     <Content Include="Views\Inscription\Mercii.cshtml" />
     <Content Include="Views\Inscription\LogMe.cshtml" />
+    <Content Include="Views\Home\Vote.cshtml" />
+    <Content Include="Views\Gmap\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\ZoneMembre\Controllers\" />
+    <Folder Include="Areas\ZoneMembre\Models\" />
+    <Folder Include="Areas\ZoneMembre\Views\Shared\" />
     <Folder Include="audio\" />
     <Folder Include="images\aboutus\" />
     <Folder Include="images\blogdetails\" />

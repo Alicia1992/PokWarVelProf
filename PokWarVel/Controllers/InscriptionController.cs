@@ -13,8 +13,6 @@ namespace PokWarVel.Controllers
         // GET: Inscription
         public ActionResult Index()
         {
-                     
-
             return View();
         }
 
